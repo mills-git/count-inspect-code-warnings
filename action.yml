@@ -1,0 +1,15 @@
+name: Count InspectCode Warnings
+description: Custom GitHub Action for reading SARIF files output by the Resharper InspectCode tool and counting the number of warnings
+
+inputs:
+  code-issues-file-path:
+    description: The path to the SARIF file output by the Resharper InspectCode tool
+    required: true
+
+outputs:
+  warning-count:
+    description: The number of warnings found in the SARIF file
+
+runs:
+  using: node20
+  main: dist/index.js
